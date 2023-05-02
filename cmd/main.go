@@ -5,7 +5,10 @@ import (
 	"fmt"
 	"path"
 
+	"github.com/Paxx-RnD/go-ffmpeg/configuration"
+	"github.com/Paxx-RnD/go-ffmpeg/ffprobe"
 	"github.com/HiWay-Media/SoundWave-Go/types"
+	"github.com/HiWay-Media/SoundWave-Go/soundwave"
 )
 
 func main() {
@@ -20,8 +23,13 @@ func main() {
 		return
 	}
 	//
-	fmt.Println("reading flags")
-	logfile := path.Join(path.Dir(flags.Input), "log.txt")
+	var conf = configuration.Configuration{
+		FfmpegPath:  "ffmpeg",
+		FfprobePath: "ffprobe",
+	}
+	ffprobe := ffprobe.NewFfProbe(&conf, nil)
+	log.Println("ffprobe ", ffprobe )
 	//
-	fmt.Println("logfile ", logfile)
+	s := soundwave.NewService(flags, ffprobe)
+	fmt.Println("Generating soundwave ", s)
 }
