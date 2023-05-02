@@ -30,13 +30,12 @@ func (s *service) GenerateWaveForm() string {
 	if err != nil {
 		panic(fmt.Sprintf("could not probe: %v", err))
 	}
-
-	duration, err := strconv.ParseFloat(probe.GetFirstVideoStream().Duration, 64)
+	/*duration, err := strconv.ParseFloat(probe.GetFirstVideoStream().Duration, 64)
 	if err != nil {
 		panic(fmt.Sprintf("could not get video duration: %v", err))
-	}
-	outputPath := s.flags.Output
-	log.Println("duration ", duration, outputPath)
+	}*/
+	outputPath := path.Dir(s.flags.Output)
+	//log.Println("duration ", duration, outputPath)
 	//ffmpeg -i input -filter_complex "compand,showwavespic=s=640x120" -frames:v 1 output.png
 	cmd := exec.Command(
 		"ffmpeg",
