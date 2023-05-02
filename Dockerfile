@@ -24,4 +24,4 @@ COPY --from=build /app/main .
 # Run the binary
 ENTRYPOINT ["./main"]
 # Set default arguments
-#CMD ["-i", "input.mp4"]
+#CMD ["-i", "input.mp3"]
