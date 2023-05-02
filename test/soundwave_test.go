@@ -31,11 +31,11 @@ func TestNewService(t *testing.T) {
 }
 
 func TestGenerateWaveForm(t *testing.T){
-	lags := getFlags()
+	flags := getFlags()
 	ffprobe := ffprobe.NewFfProbe(Configuration(), nil)
 	s := soundwave.NewService(flags, ffprobe)
 	waveForm := s.GenerateWaveForm()
-	assert.NotEmpty(t, frames)
+	assert.NotEmpty(t, waveForm)
 }
 
 
