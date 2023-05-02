@@ -1,17 +1,15 @@
 package types
 
-
 import (
 	"flag"
 	"fmt"
-	"path"
 )
 
 type Flags struct {
-	Input   string
-	Output  string
+	Input  string
+	Output string
 
-	Help    bool
+	Help bool
 }
 
 func (f *Flags) Set() error {
@@ -25,6 +23,7 @@ func (f *Flags) Set() error {
 	//
 	f.Input = *input
 	f.Output = *output
+	f.Help = *help
 	//
 	if f.Input == "" {
 		return fmt.Errorf("need to specify input")

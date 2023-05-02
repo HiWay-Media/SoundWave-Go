@@ -3,6 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
+
+	"github.com/HiWay-Media/SoundWave-Go/types"
 )
 
 func main() {
