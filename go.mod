@@ -5,6 +5,7 @@ go 1.18
 require (
 	github.com/Paxx-RnD/go-ffmpeg v1.0.29 // indirect
 	github.com/Paxx-RnD/go-helper v1.0.48 // indirect
+	github.com/caarlos0/env/v6 v6.10.1 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/stretchr/objx v0.5.0 // indirect
