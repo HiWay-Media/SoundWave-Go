@@ -30,6 +30,15 @@ func TestNewService(t *testing.T) {
 	assert.NotNil(t, s)
 }
 
+func TestGenerateWaveForm(t *testing.T){
+	lags := getFlags()
+	ffprobe := ffprobe.NewFfProbe(Configuration(), nil)
+	s := soundwave.NewService(flags, ffprobe)
+	waveForm := s.GenerateWaveForm()
+	assert.NotEmpty(t, frames)
+}
+
+
 func getFlags() types.Flags {
 	flags := types.Flags{
 		Input: inputPath,
