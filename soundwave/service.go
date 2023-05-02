@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os/exec"
-	"strconv"
+	"path"
 	"strings"
 
 	"github.com/HiWay-Media/SoundWave-Go/types"
@@ -30,6 +30,7 @@ func (s *service) GenerateWaveForm() string {
 	if err != nil {
 		panic(fmt.Sprintf("could not probe: %v", err))
 	}
+	log.Println("probe ", probe)
 	/*duration, err := strconv.ParseFloat(probe.GetFirstVideoStream().Duration, 64)
 	if err != nil {
 		panic(fmt.Sprintf("could not get video duration: %v", err))
