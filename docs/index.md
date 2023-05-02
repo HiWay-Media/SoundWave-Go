@@ -7,7 +7,7 @@ permalink: /
 last_modified_date: 2023-05-02T10:00:00+0000
 ---
 
-# SoundWave 
+# SoundWave Go
 
 
 soundawave-go is a tool
