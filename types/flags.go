@@ -16,7 +16,7 @@ type Flags struct {
 func (f *Flags) Set() error {
 	//
 	input := flag.String("i", "", "path of the input file")
-	output := flag.String("o", "", "path of the output soundwave file")
+	output := flag.String("o", "output.png", "path of the output soundwave file")
 	width := flag.Int("w", 640, "frame width")
 	height := flag.Int("h", 120, "frame height")
 	//
