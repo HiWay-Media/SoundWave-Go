@@ -12,7 +12,10 @@ import (
 )
 
 var (
-	inputPath = "input.mp3"
+	inputPath 		= "input.mp3"
+	outputPath 		= "output.png"
+	frameWidth     	= 640
+	frameHeight    	= 120
 )
 
 func Configuration() *configuration.Configuration {
@@ -42,7 +45,9 @@ func TestGenerateWaveForm(t *testing.T){
 func getFlags() types.Flags {
 	flags := types.Flags{
 		Input: inputPath,
-		//Prefix: outputPath,
+		Output: outputPath,
+		Width:     frameWidth,
+		Height:    frameHeight,
 	}
 	return flags
 }
