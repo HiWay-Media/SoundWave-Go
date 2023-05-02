@@ -33,7 +33,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
         with:
-          path: go/src/github.com/name: Build Binaries
+          path: go/src/github.com/HiWay-Media/SoundWave-Go: Build Binaries
 #
 on:
   push:
