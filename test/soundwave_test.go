@@ -4,6 +4,7 @@ import (
 	"log"
 	"testing"
 
+	"github.com/stretchr/testify/assert"
 	"github.com/HiWay-Media/SoundWave-Go/soundwave"
 	"github.com/HiWay-Media/SoundWave-Go/types"
 	"github.com/Paxx-RnD/go-ffmpeg/configuration"
@@ -26,7 +27,7 @@ func TestNewService(t *testing.T) {
 	log.Println("ffprobe ", ffprobe, " flags ", flags)
 	s := soundwave.NewService(flags, ffprobe)
 	log.Println("s ", s)
-	//assert.NotNil(t, s)
+	assert.NotNil(t, s)
 }
 
 func getFlags() types.Flags {
