@@ -4,6 +4,7 @@ import (
 	"log"
 	"testing"
 
+	"github.com/HiWay-Media/SoundWave-Go/soundwave"
 	"github.com/HiWay-Media/SoundWave-Go/types"
 	"github.com/Paxx-RnD/go-ffmpeg/configuration"
 	"github.com/Paxx-RnD/go-ffmpeg/ffprobe"
@@ -23,8 +24,8 @@ func TestNewService(t *testing.T) {
 	flags := getFlags()
 	ffprobe := ffprobe.NewFfProbe(Configuration(), nil)
 	log.Println("ffprobe ", ffprobe, " flags ", flags)
-	/*s := sprite.NewService(flags, ffprobe)
-	assert.NotNil(t, s)*/
+	s := soundwave.NewService(flags, ffprobe)
+	assert.NotNil(t, s)
 }
 
 func getFlags() types.Flags {
