@@ -36,7 +36,7 @@ func (s *service) GenerateWaveForm() string {
 		panic(fmt.Sprintf("could not get video duration: %v", err))
 	}*/
 	outputPath := path.Dir(s.flags.Output)
-	//log.Println("duration ", duration, outputPath)
+	log.Println(outputPath)
 	//ffmpeg -i input -filter_complex "compand,showwavespic=s=640x120" -frames:v 1 output.png
 	cmd := exec.Command(
 		"ffmpeg",
@@ -44,7 +44,7 @@ func (s *service) GenerateWaveForm() string {
 		s.flags.Input,
 		"-filter_complex",
 		fmt.Sprintf("compand,showwavespic=%dx%d", s.flags.Width, s.flags.Height),
-		"-frames",
+		"-frames:v",
 		"1",
 		outputPath,
 	)
